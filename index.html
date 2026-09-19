@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор гідравліки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <img src="logo.png" alt="Логотип" class="logo">
+        <h1>Калькулятор гідравліки</h1>
+        <form id="calc-form">
+            <label for="power">Теплова потужність (кВт):</label>
+            <input type="number" id="power" required>
+
+            <label for="delta-t">Дельта температур (°C):</label>
+            <input type="number" id="delta-t" required>
+            <small style="color: #666; font-size: 0.85em;">
+                Теплові насоси, тепла підлога: 5°C<br>
+                Газові, електричні котли: 10°C<br>
+                Твердопаливні котли: 20°C
+            </small>
+
+            <label for="material">Матеріал труб:</label>
+            <select id="material">
+                <option value="ppr">Поліпропілен</option>
+                <option value="steel">Сталь</option>
+                <option value="metal-plastic">Металопластик</option>
+                <option value="copper">Мідь</option>
+                <option value="stainless">Нержавіюча сталь</option>
+            </select>
+
+            <label for="diameter">Внутрішній діаметр (мм):</label>
+            <input type="number" id="diameter" required>
+
+            <label for="length">Довжина трубопроводу (м):</label>
+            <input type="number" id="length" required>
+
+            <label for="elbows90">Кількість колін (90°):</label>
+            <input type="number" id="elbows90" value="0">
+
+            <label for="tees">Кількість трійників:</label>
+            <input type="number" id="tees" value="0">
+
+            <label for="valves">Кількість кульових кранів:</label>
+            <input type="number" id="valves" value="0">
+
+            <button type="button" onclick="calculate()">Розрахувати</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
